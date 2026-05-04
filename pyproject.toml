@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "motion-cues"
+version = "0.1.0"
+description = "Vehicle Motion Cues for Linux — reduces motion sickness while using a laptop in a vehicle"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.9"
+dependencies = ["PyQt6>=6.0"]
+keywords = ["motion sickness", "vehicle", "accessibility", "overlay", "desktop"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: X11 Applications :: Qt",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Desktop Environment",
+    "Topic :: Utilities",
+]
+
+[project.urls]
+Homepage = "https://github.com/monperrus/motion-cues"
+Issues   = "https://github.com/monperrus/motion-cues/issues"
+
+[project.scripts]
+motion-cues = "motion_cues:main"
+
+[tool.setuptools]
+py-modules = ["motion_cues"]
+
+[tool.ruff]
+target-version = "py39"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = [
+    "E501",   # line too long — handled by formatter
+]
